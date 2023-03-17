@@ -1,0 +1,24 @@
+.header {
+    width: 100%;
+    grid-area: h;
+    height: 80px;
+}
+
+.headerContainer {
+    width: 100%;
+    align-items: center;
+    height: 80px;
+    display: grid;
+    grid-template-areas:
+        "l s b";
+    grid-template-rows: 80px 28fr;
+    grid-template-columns: 9fr 10fr;
+}
+
+.logo {
+    width: 150px;
+    height: 50px;
+    background-image: url(img/logo.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}

@@ -1,0 +1,49 @@
+.buttons {
+    align-items: center;
+    display: grid;
+    grid: 0 1 auto;
+    border-radius: 8px;
+    height: 36px;
+    min-width: 125px;
+    position: relative;
+    width: 268px;
+}
+.buttonsContainer {
+    border: 0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    height: 100%;
+    outline: none;
+    padding: 3px 16px;
+    width: 100%;
+    z-index: 2;
+}
+.logIn {
+    width: 90px;
+    height: 35px;
+    border-radius: 30px;
+    background: #5C4C64;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: center;
+    color: #f1edf7;
+    outline: none;
+    border: none;
+    margin-right: 50px;
+
+}
+.signUp {
+    width: 90px;
+    height: 35px;
+    border-radius: 30px;
+    background: #e3dbef;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: center;
+    color: #f1edf7;
+    outline: none;
+    border: none;
+
+    color: #100e13;
+
+}
