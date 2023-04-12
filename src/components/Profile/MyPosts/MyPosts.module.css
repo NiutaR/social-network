@@ -5,3 +5,13 @@
     margin-top: 15px;
     background-color: aquamarine;
 }
+
+.item {
+    color: green;
+}
+
+.item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+} 

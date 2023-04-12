@@ -3,29 +3,25 @@ import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
-import Dialogs from './components/Dialogs/Dialogs';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
+import DialogsContainer from './components/Dialogs/DialogsContainer';
 
-
-//import {render} from '@testing-library/react';
 
 const App = (props) => {
+  
   return (
-    <BrowserRouter>
-    <div className='app-wrapper'>
-      <div className='app-container'>
-      <Header></Header>
-      <main className='app-wrapper-content'>
-        <Navbar></Navbar>
-        <Routes>
-          <Route path="/profile/" element={<Profile/>}/>
-          <Route path="/dialogs/" element={<Dialogs/>}/>
-        </Routes>
-      </main>
+      <div className='app-wrapper'>
+        <div className='app-container'>
+          <Header />
+          <main className='app-wrapper-content'>
+            <Navbar />
+            <Routes>
+              <Route path='/profile' element={<Profile store={props.store}/>} />
+              <Route path='/dialogs' element={<DialogsContainer store={props.store}/>} />
+            </Routes>
+          </main>
+        </div>
       </div>
-    </div>
-    </BrowserRouter>
   );
-}
-
+};
 export default App;

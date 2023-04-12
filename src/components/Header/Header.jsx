@@ -12,10 +12,8 @@ const Header = () => {
                 </div>
                 <Search></Search>
                 <Buttons>
-                
                 </Buttons>
             </div>
-            
         </header>
     );
 }
