@@ -11,8 +11,7 @@ const Header = () => {
                 <div className={s.logo}>
                 </div>
                 <Search></Search>
-                <Buttons>
-                </Buttons>
+                <Buttons></Buttons>
             </div>
         </header>
     );

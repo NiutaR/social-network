@@ -5,22 +5,7 @@ import sidebarReducer from "./sidebarReducer";
 
 let store = {
     _state: {
-        profilePage: {
-            posts: [{
-                    id: 1,
-                    message: 'Hi how are you?',
-                    likesCount: '12'
-                },
-                {
-                    id: 2,
-                    message: 'Good,good thank you',
-                    likesCount: '34'
-                }
-            ],
-            newPostText: 'it-kamasutra'
-
-        },
-        dialogsPage: {
+       CPage: {
             dialogs: [{
                     id: 1,
                     name: 'Valery'
@@ -97,3 +82,7 @@ let store = {
 
 
 export default store;
+
+let profilePage = {
+    
+}

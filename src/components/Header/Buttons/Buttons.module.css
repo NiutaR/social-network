@@ -3,10 +3,7 @@
     display: grid;
     grid: 0 1 auto;
     border-radius: 8px;
-    height: 36px;
-    min-width: 125px;
     position: relative;
-    width: 268px;
 }
 .buttonsContainer {
     border: 0;
@@ -18,32 +15,21 @@
     width: 100%;
     z-index: 2;
 }
-.logIn {
-    width: 90px;
-    height: 35px;
-    border-radius: 30px;
-    background: #5C4C64;
-    box-sizing: border-box;
-    cursor: pointer;
-    text-align: center;
-    color: #f1edf7;
-    outline: none;
-    border: none;
-    margin-right: 50px;
 
-}
 .signUp {
-    width: 90px;
-    height: 35px;
-    border-radius: 30px;
-    background: #e3dbef;
-    box-sizing: border-box;
-    cursor: pointer;
-    text-align: center;
-    color: #f1edf7;
-    outline: none;
-    border: none;
-
-    color: #100e13;
-
+   text-decoration: none;
+   
+}
+.signUp:hover,
+.signUp:focus {
+    color: rgb(203, 122, 200);
+    text-shadow: rgb(155, 118, 155);
+}
+.logIn {
+    padding-right: 20px;
+}
+.logIn:hover,
+.logIn:focus {
+    color: rgb(94, 44, 92);
+    text-shadow: rgb(175, 154, 175);
 }

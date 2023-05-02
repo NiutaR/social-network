@@ -1,6 +1,14 @@
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
 const SEND_MESSAGE = 'SEND_MESSAGE';
 
+type DialogType = {
+    id: number,
+    name: string
+}
+type MessageType = {
+    id: number,
+    message: string
+}
 let initialState = {
     dialogs: [{
             id: 1,
@@ -26,7 +34,7 @@ let initialState = {
             id: 6,
             name: 'Victorio'
         }
-    ],
+    ] as Array<DialogType>,
     messages: [{
             id: 1,
             message: 'Hi'
@@ -51,34 +59,46 @@ let initialState = {
             id: 6,
             message: 'Are you sure?'
         }
-    ],
-    newMessageBody: '' 
+    ] as Array<MessageType>,
+    newMessageBody: ''
 };
-const dialogsReducer = (state = initialState, action) => {
+
+export type InitialStateType = typeof initialState
+const dialogsReducer = (state = initialState, action: any) => {
     switch (action.type) {
-        case UPDATE_NEW_MESSAGE_BODY: {
-            //state.newMessageBody = action.body;
-            let bodyCopy = {...state};
-            bodyCopy.newPostText = action.body;
-            return bodyCopy;
-            //return state;
-        }
-        case SEND_MESSAGE: {
-            //let newMessageBody
+        case UPDATE_NEW_MESSAGE_BODY:
+            return {
+                ...state,
+                newMessageBody: action.body
+            };
+
+        case SEND_MESSAGE:
             let body = state.newMessageBody;
-            let bodyCopy = {...state};
-            bodyCopy.messages = {...state.messages};
-            bodyCopy.messages.push();
-            
-            return bodyCopy;
-        }
+            return {
+                ...state,
+                newMessageBody: '',
+                messages: [...state.messages, {
+                    id : state.messages.length + 1,
+                    message: body
+                }]
+            };
+
         default:
             return state;
     }
 
 };
-export const sendMessageCreator = () => ({type: SEND_MESSAGE});
-export const updateNewMessageBodyCreator = (body) =>
-    ({ type: UPDATE_NEW_MESSAGE_BODY, body: body});
+type SendMessageCreatorActionType = {
+    type: typeof SEND_MESSAGE
+    newMessageBody: string
+}
+export const sendMessageCreator = (newMessageBody: string): SendMessageCreatorActionType => ({
+    type: SEND_MESSAGE, newMessageBody
+});
+export const updateNewMessageBodyCreator = (body: string) =>
+    ({
+        type: UPDATE_NEW_MESSAGE_BODY,
+        body: body
+    });
 
 export default dialogsReducer;
